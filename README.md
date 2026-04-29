@@ -1,16 +1,16 @@
-# Student Fee Management System
+# 🎓 Student Fee Management System
 
-## Features
-- Add Student
-- View Student
-- Delete Student
-- Fee Payment
-- Receipt Generation
+## 📌 Features
+- Add Student  
+- View Student  
+- Delete Student  
+- Fee Payment  
+- Receipt Generation  
 
-## Technologies Used
-- Java
-- JDBC
-- MySQL
+## 🛠 Technologies Used
+- Java  
+- JDBC  
+- MySQL  
 
-## Author
-T.S.V.Vara Prasad
+## 👨‍💻 Author
+T. S. V. Vara Prasad
