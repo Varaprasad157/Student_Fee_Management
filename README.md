@@ -10,43 +10,52 @@
 ## 🛠 Technologies Used
 - Java  
 - JDBC  
-- MySQL  
+- MySQL
+
+## ▶️ How to Run
+
+1. Create MySQL database: fee_management  
+2. Run the SQL queries above  
+3. Update DBConnection.java with your MySQL username & password  
+4. Run MainApp.java  
 
 ## 👨‍💻 Author
 T. S. V. Vara Prasad
 
 ## 🗄 Database Schema
 
-### Student Table
+### Students Table
 | Column Name | Data Type |
 |------------|----------|
-| id         | INT (PK) |
+| id         | VARCHAR  |
 | name       | VARCHAR  |
 | course     | VARCHAR  |
 | total_fee  | DOUBLE   |
+| paid_fee   | DOUBLE   |
 
-### Receipt Table
+### Receipts Table
 | Column Name  | Data Type |
 |-------------|----------|
-| receipt_id  | INT (PK) |
-| student_id  | INT (FK) |
-| amount_paid | DOUBLE   |
-| date        | DATE     |
+| id          | INT (PK) |
+| student_id  | VARCHAR  |
+| amount      | DOUBLE   |
+| date        | TIMESTAMP |
 
 ### SQL Tables Creation
 
 ```sql
-CREATE TABLE student (
-    id INT PRIMARY KEY,
+CREATE TABLE students (
+    id VARCHAR(20) PRIMARY KEY,
     name VARCHAR(50),
     course VARCHAR(50),
-    total_fee DOUBLE
+    total_fee DOUBLE,
+    paid_fee DOUBLE
 );
 
-CREATE TABLE receipt (
-    receipt_id INT PRIMARY KEY AUTO_INCREMENT,
-    student_id INT,
-    amount_paid DOUBLE,
-    date DATE,
-    FOREIGN KEY (student_id) REFERENCES student(id)
+CREATE TABLE receipts (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    student_id VARCHAR(20),
+    amount DOUBLE,
+    date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
